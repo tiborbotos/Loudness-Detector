@@ -1,7 +1,5 @@
-# Live Audio Input effects
+# Loudness detector
 
-I whipped this app up to test live audio input, letting the user select a few common tunable effects and see (and hear) the effects.  It's also a good demo of how to build chorus and flanging effects in WebAudio.
+This project goal is to create a loudness detector running in a browser.
 
-Check it out, feel free to fork, submit pull requests, etc.
-
--Chris
+Forked from the amazing https://github.com/cwilso/Audio-Input-Effects.
