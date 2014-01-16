@@ -2,10 +2,8 @@
 <html>
 <head>
 	<title>Live input effects</title>
-    <script src="http://cwilso.github.io/AudioContext-MonkeyPatch/AudioContextMonkeyPatch.js"></script>
+  <script src="js/AudioContextMonkeyPatch.js"></script>
 
-	<script src="dpd.js"></script>
-	<script src="js/stats.js"></script>
 	<script src="js/visualizer/freqDrawer.js"></script>
 	<script src="js/loudnessdetector.js"></script>
 	<script src="js/effects.js"></script>
@@ -14,12 +12,42 @@
 	<style>
 	body { font: 14pt Arial, sans-serif; background: #333; color: gray; }
 	#arranger { width:1000px; margin: 25px auto}
+	#peaks,#alert{
+		border: none;
+		background-color: #333;
+		color: #999;
+		font-family: courier;
+		width: 250px;
+	}
+	div#kitty {
+		display: none;
+	}
+	div#kitty h1 {
+		position: absolute;
+		top: 80px; left: 0; right: 0;
+		text-align: center;
+		font-size: 50px;
+		font-family: fantasy;
+		color: #EFEFEF;
+	}
+	div#kitty img {
+		margin: auto;
+	    position: absolute;
+	    top: 0; left: 0; bottom: 0; right: 0;
+	}
 	</style>
 </head>
 <body>
+	<span id="peaks"></span><br/>
+	<span id="alert"></span>
 	<div id="arranger">
 		<canvas id="view1" width="1000" height="400"></canvas><br>
 		<canvas id="view2" width="1000" height="400"></canvas><br>
+	</div>
+	
+	<div id="kitty">
+		<h1>NICE JOB! You have just killed a cat!</h1>
+		<img src="img/cat1.jpg" />
 	</div>
 </body>
 </html>

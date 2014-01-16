@@ -33,8 +33,8 @@ function gotStream(stream) {
 
     // create mix gain nodes
     audioInput.connect(analyser1);
-	outputMix = audioContext.createGain();
-	outputMix.connect(analyser2);
+    outputMix = audioContext.createGain();
+    outputMix.connect(analyser2);
     updateAnalysers();
 }
 
@@ -49,31 +49,18 @@ function initAudio() {
     
     loudnessDetector = new LoudnessDetector("view2");
 
-    if (!navigator.getUserMedia)
+    if (!navigator.getUserMedia) {
         navigator.getUserMedia = navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
+    }
 
-    if (!navigator.getUserMedia)
+    if (!navigator.getUserMedia) {
         return(alert("Error: getUserMedia not supported!"));
+    }
 
     navigator.getUserMedia({audio:true}, gotStream, function(e) {
         alert('Error getting audio');
-        console.log(e);
+        console.log('Error getting audio!', e);
     });
-	
-    // stats
-	var stats = new Stats();
-	stats.setMode(0);
-
-	stats.domElement.style.position = 'absolute';
-	stats.domElement.style.left = '0px';
-	stats.domElement.style.top = '0px';
-
-	document.body.appendChild( stats.domElement );
-
-	setInterval( function () {
-		stats.begin();
-		stats.end();
-	}, 1000 / 60 );
 }
 
 window.addEventListener('load', initAudio );

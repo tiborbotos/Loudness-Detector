@@ -13,7 +13,7 @@ FreqDrawer.prototype.draw = function(freqByteData) {
 	var HEIGHT = 200;  // max height of the canvas
 	var BASE_Y = 50; // position of the spectrum
 	var WIDTH = 8; // width of a bar
-	var MIN_HEIGHT = 1; // minimum height to display
+	var MIN_HEIGHT = 0; // minimum height to display
 
 	var max = freqByteData.length; // local, pre-set constant
 	var step = 2; // state variables
